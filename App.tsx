@@ -4,7 +4,7 @@ import type { Routes } from "./src/Routes";
 import { Examples } from "./src/Examples";
 import { HeartOfTheMatter } from "./src/HeartOfTheMatter";
 import { PanGesture } from "./src/PanGesture";
-// import { Transitions } from "./src/Transitions";
+import { Transitions } from "./src/Transitions";
 // import { CircularSlider } from "./src/CircularSlider";
 // import { Graph } from "./src/Graph";
 import { Worklets } from "./src/Worklets";
@@ -57,14 +57,14 @@ const App = () => (
           title: "PanGesture",
         }}
       />
-      {/* <Stack.Screen
+      <Stack.Screen
         name="Transitions"
         component={Transitions}
         options={{
           title: "Transitions",
         }}
       />
-      <Stack.Screen
+      {/*<Stack.Screen
         name="CircularSlider"
         component={CircularSlider}
         options={{
