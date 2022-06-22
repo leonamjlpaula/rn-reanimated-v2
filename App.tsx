@@ -7,7 +7,7 @@ import { PanGesture } from "./src/PanGesture";
 // import { Transitions } from "./src/Transitions";
 // import { CircularSlider } from "./src/CircularSlider";
 // import { Graph } from "./src/Graph";
-// import { Worklets } from "./src/Worklets";
+import { Worklets } from "./src/Worklets";
 // import { DragToSort } from "./src/DragToSort";
 // import { DynamicSpring } from "./src/DynamicSpring";
 // import { Animations } from "./src/Animations";
@@ -36,13 +36,13 @@ const App = () => (
           title: "The Heart of the Matter",
         }}
       />
-      {/* <Stack.Screen
+      <Stack.Screen
         name="Worklets"
         component={Worklets}
         options={{
           title: "Worklets",
         }}
-      /> */}
+      />
       {/* <Stack.Screen
         name="Animations"
         component={Animations}
