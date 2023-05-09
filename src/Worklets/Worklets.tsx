@@ -1,21 +1,21 @@
-import React, { useState } from "react";
-import { View, StyleSheet, Text, Platform } from "react-native";
-import type Animated from "react-native-reanimated";
-import { useSharedValue, runOnUI, runOnJS } from "react-native-reanimated";
-import { ReText } from "react-native-redash";
+import React, {useState} from 'react';
+import {View, StyleSheet, Text, Platform} from 'react-native';
+import type Animated from 'react-native-reanimated';
+import {useSharedValue, runOnUI, runOnJS} from 'react-native-reanimated';
+import {ReText} from 'react-native-redash';
 
-import { Button } from "../components";
+import {Button} from '../components';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignContent: "center",
+    justifyContent: 'center',
+    alignContent: 'center',
   },
 });
 
 const formatDatetime = (datetime: Date) => {
-  "worklet";
+  'worklet';
   return `${datetime.getFullYear()}-${
     datetime.getMonth() + 1
   }-${datetime.getDate()} ${datetime.getHours()}:${datetime.getMinutes()}:${datetime.getSeconds()}`;
@@ -24,18 +24,18 @@ const formatDatetime = (datetime: Date) => {
 const sayHello = (
   text: Animated.SharedValue<string>,
   from: string,
-  cb: () => void
+  cb: () => void,
 ) => {
-  "worklet";
+  'worklet';
   text.value = `Hello from ${from}(${Platform.OS}) at ${formatDatetime(
-    new Date()
+    new Date(),
   )}`;
   runOnJS(cb)();
 };
 
 export const Worklets = () => {
-  const [jsText, setJsText] = useState("");
-  const text = useSharedValue("");
+  const [jsText, setJsText] = useState('');
+  const text = useSharedValue('');
   const sayHelloOnTheJSThread = () =>
     setJsText(`Hello world at ${formatDatetime(new Date())}`);
   return (
@@ -43,13 +43,13 @@ export const Worklets = () => {
       <Text>JS thread says:</Text>
       <Text>{jsText}</Text>
       <Text>UI thread says:</Text>
-      <ReText {...{ text }} />
+      <ReText {...{text}} />
       <Button
         onPress={() =>
           runOnUI(sayHello)(
             text,
-            "Beautiful Zuerich Switzerland",
-            sayHelloOnTheJSThread
+            'Beautiful Zuerich Switzerland',
+            sayHelloOnTheJSThread,
           )
         }
         label="Say Hello"

@@ -1,21 +1,23 @@
+import registerRootComponent from 'expo/build/launch/registerRootComponent'
+
 import { createStackNavigator } from "@react-navigation/stack";
 
-import type { Routes } from "./src/Routes";
-import { Examples } from "./src/Examples";
-import { HeartOfTheMatter } from "./src/HeartOfTheMatter";
-import { PanGesture } from "./src/PanGesture";
-import { Transitions } from "./src/Transitions";
+import type { Routes } from "./Routes";
+import { Examples } from "./Examples";
+import { HeartOfTheMatter } from "./HeartOfTheMatter";
+import { PanGesture } from "./PanGesture";
+import { Transitions } from "./Transitions";
 // import { CircularSlider } from "./src/CircularSlider";
 // import { Graph } from "./src/Graph";
-import { Worklets } from "./src/Worklets";
+import { Worklets } from "./Worklets";
 // import { DragToSort } from "./src/DragToSort";
 // import { DynamicSpring } from "./src/DynamicSpring";
-// import { Animations } from "./src/Animations";
-import { Swiping, swipingAssets } from "./src/Swiping";
+import { Animations } from "./Animations";
+import { Swiping, swipingAssets } from "./Swiping";
 // import { Bezier } from "./src/Bezier";
 // import { ShapeMorphing } from "./src/ShapeMorphing";
 // import { Accordion } from "./src/Accordion";
-import { LoadAssets } from "./src/components";
+import { LoadAssets } from "./components";
 
 const assets = [...swipingAssets];
 const Stack = createStackNavigator<Routes>();
@@ -43,13 +45,13 @@ const App = () => (
           title: "Worklets",
         }}
       />
-      {/* <Stack.Screen
+      <Stack.Screen
         name="Animations"
         component={Animations}
         options={{
           title: "Animations",
         }}
-      /> */}
+      />
       <Stack.Screen
         name="PanGesture"
         component={PanGesture}
@@ -126,4 +128,4 @@ const App = () => (
 );
 
 // eslint-disable-next-line import/no-default-export
-export default App;
+export default registerRootComponent(App);
